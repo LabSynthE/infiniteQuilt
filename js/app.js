@@ -30,6 +30,18 @@
             img.alt = `Quilt square ${next}`;
 
             a.appendChild(img);
+
+            // tape across the seam above every image except the first
+            if (next > 1) {
+                ['l', 'r'].forEach((side) => {
+                    const t = document.createElement('img');
+                    t.className = `tape tape-${side}`;
+                    t.src = `images/left-stitching.gif`;
+                    t.alt = '';
+                    t.setAttribute('aria-hidden', 'true');
+                    a.appendChild(t);
+                });
+            }
             quilt.appendChild(a);
         }
 

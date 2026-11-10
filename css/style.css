@@ -305,3 +305,59 @@ header li {
 .container .about {
     margin-top: 80px;
 }
+
+/* ---- Tape ---- */
+.quilt .tile {
+    position: relative;
+    overflow: visible;
+}
+
+.quilt .tape {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    width: clamp(22px, 3vw, 46px);
+    height: auto;
+    z-index: 2;
+    pointer-events: none; /* clicks still reach the image underneath */
+}
+
+.quilt .tape-l {
+    left: 8%;
+}
+
+.quilt .tape-r {
+    right: 8%;
+}
+
+/* ---- Stitching (replaces tape) ---- */
+.quilt .tape {
+    width: clamp(80px, 13vw, 163px);
+}
+
+.quilt .tape-l {
+    left: 4%;
+}
+
+.quilt .tape-r {
+    right: 4%;
+    transform: translateY(-50%) scaleX(-1);
+}
+
+/* ---- Stitching: small, on the seam ---- */
+.quilt .tile img.tape {
+    width: clamp(80px, 13vw, 163px);
+    height: auto;
+    object-fit: contain;
+    opacity: 1;
+}
+
+/* ---- Space between quilt pieces ---- */
+.quilt {
+    gap: 1rem;
+}
+
+/* center the stitching in the gap */
+.quilt .tile .tape {
+    top: -0.5rem;
+}

@@ -1,0 +1,260 @@
+@import url(https://fonts.googleapis.com/css?family=Sanchez:400italic,400);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: "Sanchez", serif;
+  font-size: 12px;
+  background: #006400;
+  color: #fff;
+  margin: 0;
+}
+header {
+  position: fixed;
+  top: 0;
+  min-height: 200px;
+  width: 100%;
+  background: #006400;
+  background: #450851;
+  z-index: 4;
+  text-align: center;
+}
+
+ul {
+  /* make the list centered horizontally */
+  text-align: center;
+  list-style-type: none;
+  margin: 1em 0;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  float: none;
+  text-align: center;
+  padding: 1em;
+  margin: 0;
+  background: #000;
+}
+
+/* add right margin to all items except the last one to avoid trailing gap */
+li:not(:last-child) {
+  margin-right: 1.2em;
+}
+
+li a {
+  color: #000;
+  font-family: sans-serif;
+  font-size: 1.2em;
+}
+li a:hover {
+  color: #fff;
+}
+li a:visited,
+a:active {
+  color: #fff;
+}
+h1,
+h1 a {
+  font-size: 36px;
+  margin: 1.5em 0 0 0;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 768px;
+  margin: 2em auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quotes {
+  margin: 200px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about {
+  margin: 200px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  text-indent: 1em;
+}
+a {
+  color: #fff;
+  font-family: "Redaction 50", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3rem;
+  text-decoration: none;
+  letter-spacing: .25rem;
+}
+blockquote {
+  margin-bottom: 25px;
+}
+
+.quote {
+  position: relative;
+  font-size: 20px;
+  line-height: 1.7em;
+  word-break: break-word;
+}
+
+.quote footer {
+  font-size: 0.6em;
+  font-weight: 700;
+  color: #d3d3cf;
+  text-align: right;
+}
+
+/* add dash before author name */
+.quote footer:before {
+  content: "\2015";
+}
+
+/* add quote mark in right margin */
+.quote:after {
+  content: "\201D";
+  position: absolute;
+  top: 0.3em;
+  right: -0.5em;
+  font-size: 4em;
+  font-style: italic;
+  color: #e7e6e4;
+  z-index: -1;
+}
+
+/* loader */
+
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  opacity: 0;
+}
+
+.loader.show {
+  opacity: 1;
+}
+
+.loader div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: #f4f4f4;
+  animation: loader 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.loader div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+
+.loader div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+
+.loader div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+
+@keyframes loader {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+
+  50%,
+  100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
+/* ---- Infinite Quilt additions ---- */
+body {
+  background: #222;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.quilt {
+  margin: 200px 0 0 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0; /* tiles touch, like a quilt */
+}
+
+.quilt .tile {
+  display: block;
+  aspect-ratio: 4 / 3;
+  background: #111;
+  overflow: hidden;
+}
+
+.quilt .tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.quilt .tile:hover img {
+  opacity: 0.85;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: zoom-out;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox img {
+  max-width: 95vw;
+  max-height: 95vh;
+}
+
+/* ---- About page ---- */
+.container .about {
+    max-width: 768px;
+    margin: 200px auto 3em auto;
+    padding: 0 1em;
+    line-height: 1.5;
+    font-size: 1.3em;
+}
+
+.container .about p {
+    margin-bottom: 1em;
+}
