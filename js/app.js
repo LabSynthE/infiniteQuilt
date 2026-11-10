@@ -36,8 +36,8 @@
                 ['l', 'r'].forEach((side) => {
                     const t = document.createElement('img');
                     t.className = `tape tape-${side}`;
-                    t.src = `images/left-stitching.gif`;
-                    t.alt = '';
+                    t.src = `images/stitch.png`;
+                    t.alt = 'thread in x shape';
                     t.setAttribute('aria-hidden', 'true');
                     a.appendChild(t);
                 });
